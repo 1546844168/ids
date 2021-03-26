@@ -23,5 +23,5 @@ spring:
     nacos:
       discovery:
         namespace: dev
-        server-addr: 127.0.0.1:8848
+        server-addr: 139.224.103.236:8848
 

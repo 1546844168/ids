@@ -18,12 +18,12 @@ import lombok.Setter;
 public class SnowFlakeProperties {
 
 	/**
-	 * 数据中心标识ID
+	 * 数据中心标识ID, 默认为1
 	 */
-	private int datacenterId;
+	private int datacenterId = 1;
 
 	/**
-	 * 机器进程标识ID
+	 * 机器进程标识ID，默认为1
 	 */
-	private int machineId;
+	private int machineId = 1;
 }

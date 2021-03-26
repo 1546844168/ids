@@ -11,7 +11,7 @@
 
 
     <groupId>com.jf</groupId>
-    <artifactId>ids</artifactId>
+    <artifactId>distribute-id-ms</artifactId>
     <packaging>jar</packaging>
     <version>1.0</version>
     <modelVersion>4.0.0</modelVersion>

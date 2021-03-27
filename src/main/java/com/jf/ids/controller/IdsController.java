@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.jf.common.utils.aspect.log.MethodLogger;
 import com.jf.common.utils.result.BaseResult;
 import com.jf.ids.service.IdsService;
 
@@ -31,19 +32,15 @@ public class IdsController {
 
 	@ApiOperation("获取")
 	@GetMapping("/id")
+	@MethodLogger
 	public BaseResult<Long> getId() {
 		long id = idsService.getId();
-
-		log.trace("trace");
-		log.debug("debug");
-		log.info("info");
-		log.warn("warn");
-		log.error("error");
 		return BaseResult.success(id);
 	}
 
 	@ApiOperation("获取count个id")
 	@GetMapping("/id/{count}")
+	@MethodLogger
 	public BaseResult<List<Long>> batchGetId(@PathVariable Integer count) {
 
 		log.info("获取count个id");

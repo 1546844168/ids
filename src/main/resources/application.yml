@@ -17,6 +17,9 @@ management:
         include: "*"
 
 spring:
+  profiles:
+    active: dev
+
   application:
     name: distribute-id-ms
   cloud:

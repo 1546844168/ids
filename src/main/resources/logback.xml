@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="true" scan="true" scanPeriod="1 seconds">
+
+    <!-- etc -->
+
+    <!--定义参数,后面可以通过${LOG_FILE_NAME}使用-->
+    <property name="LOG_FILE_NAME" value="distribute-id-ms"/>
+    <property name="LOG_FILE_PATH" value="/data/logs"/>
+
+
+    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+    <include resource="org/springframework/boot/logging/logback/console-appender.xml"/>
+
+    <!-- 输出到控制台 -->
+    <!--ConsoleAppender 用于在控制台上输出日志-->
+    <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${CONSOLE_LOG_PATTERN}</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+
+    <!-- 输入到文件 -->
+    <appender name="file" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <encoder>
+            <charset>UTF-8</charset>
+            <pattern>${FILE_LOG_PATTERN}</pattern>
+        </encoder>
+        <file>${LOG_FILE_PATH}/${LOG_FILE_NAME}/${LOG_FILE_NAME}.log</file>
+        <!--定义日志归档的策略-->
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_FILE_PATH}/${LOG_FILE_NAME}/${LOG_FILE_NAME}.%d{yyyyMMdd}.%i.gz</fileNamePattern>
+            <!-- 保留 30 天的归档日志文件 -->
+            <maxHistory>30</maxHistory>
+            <!-- 日志文件上限 1G，超过后会删除旧的归档日志文件 -->
+            <totalSizeCap>3GB</totalSizeCap>
+            <!--每个日志文件最大100MB-->
+            <maxFileSize>100MB</maxFileSize>
+        </rollingPolicy>
+        <!-- 追加方式记录日志 -->
+        <append>true</append>
+    </appender>
+
+    <statusListener class="ch.qos.logback.core.status.NopStatusListener"/>
+
+
+    <!--root是默认的logger 这里设定输出级别是debug-->
+    <root level="info">
+        <!--定义了一个appender，日志会通过往这个appender往里面写-->
+        <appender-ref ref="stdout"/>
+        <!--        <appender-ref ref="file"/>-->
+    </root>
+
+
+    <!--这个logger没有指定appender，它会继承root节点中定义的那些appender-->
+    <!--由于设置了 additivity="false" ，所以输出时不会使用rootLogger的appender-->
+    <!--    <logger name="ch.qos.logback" level="error" additivity="false"/>-->
+
+</configuration>

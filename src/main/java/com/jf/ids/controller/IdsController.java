@@ -12,6 +12,7 @@ import com.jf.ids.service.IdsService;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * 描述:
@@ -22,21 +23,30 @@ import io.swagger.annotations.ApiOperation;
  */
 @Api(value = "分布式id服务controller", tags = { "分布式id" })
 @RestController
+@Slf4j
 public class IdsController {
 
 	@Autowired
 	private IdsService idsService;
 
-	@ApiOperation("获取一个id")
+	@ApiOperation("获取")
 	@GetMapping("/id")
 	public BaseResult<Long> getId() {
 		long id = idsService.getId();
+
+		log.trace("trace");
+		log.debug("debug");
+		log.info("info");
+		log.warn("warn");
+		log.error("error");
 		return BaseResult.success(id);
 	}
 
 	@ApiOperation("获取count个id")
 	@GetMapping("/id/{count}")
 	public BaseResult<List<Long>> batchGetId(@PathVariable Integer count) {
+
+		log.info("获取count个id");
 		List<Long> idList = idsService.batchGetId(count);
 		return BaseResult.success(idList);
 	}

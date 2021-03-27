@@ -35,7 +35,7 @@ snow:
 
 **获取一个id :**
 
-请求URL： http://localhost:8081/getId
+请求URL： http://localhost:8081/id
 
 请求方式：GET
 
@@ -53,11 +53,11 @@ snow:
 
 **批量获取多个id**
 
-请求URL： http://localhost:8081/batchGetId/{count}
+请求URL： http://localhost:8081/id/{count}
 
 请求方式：GET
 
-请求示例：http://localhost:8081/batchGetId/5
+请求示例：http://localhost:8081/id/5
 
 返回参数：
 

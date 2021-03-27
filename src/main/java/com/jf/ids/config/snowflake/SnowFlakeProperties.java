@@ -1,4 +1,4 @@
-package com.jf.ids.config;
+package com.jf.ids.config.snowflake;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 

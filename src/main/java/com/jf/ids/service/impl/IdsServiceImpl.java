@@ -8,7 +8,7 @@ import javax.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.jf.ids.config.SnowFlakeProperties;
+import com.jf.ids.config.snowflake.SnowFlakeProperties;
 import com.jf.ids.core.SnowFlake;
 import com.jf.ids.service.IdsService;
 

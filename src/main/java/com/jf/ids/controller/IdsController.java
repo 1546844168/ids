@@ -30,7 +30,7 @@ public class IdsController {
 	@Autowired
 	private IdsService idsService;
 
-	@ApiOperation("获取")
+	@ApiOperation("获取一个id")
 	@GetMapping("/id")
 	@MethodLogger
 	public BaseResult<Long> getId() {
@@ -43,7 +43,6 @@ public class IdsController {
 	@MethodLogger
 	public BaseResult<List<Long>> batchGetId(@PathVariable Integer count) {
 
-		log.info("获取count个id");
 		List<Long> idList = idsService.batchGetId(count);
 		return BaseResult.success(idList);
 	}

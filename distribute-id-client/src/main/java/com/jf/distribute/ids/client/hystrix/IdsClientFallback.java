@@ -3,7 +3,6 @@ package com.jf.distribute.ids.client.hystrix;
 import com.jf.common.utils.meta.enums.GlobalErrorCodeEnum;
 import com.jf.common.utils.result.BaseResult;
 import com.jf.distribute.ids.client.IdsClient;
-import feign.hystrix.FallbackFactory;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
@@ -17,28 +16,18 @@ import java.util.List;
  */
 @Component
 @Slf4j
-public class IdsClientFallback implements FallbackFactory<IdsClient> {
+public class IdsClientFallback implements IdsClient {
 
     @Override
-    public IdsClient create(Throwable throwable) {
+    public BaseResult<Long> getId() {
+        return BaseResult.fail(GlobalErrorCodeEnum.RPC_TIME_OUT.getCode(),
+                GlobalErrorCodeEnum.RPC_TIME_OUT.getMessage());
+    }
 
-        log.error("调用分布式Id服务失败, 错误原因：", throwable);
+    @Override
+    public BaseResult<List<Long>> batchGetId(Integer count) {
+        return BaseResult.fail(GlobalErrorCodeEnum.RPC_TIME_OUT.getCode(),
+                GlobalErrorCodeEnum.RPC_TIME_OUT.getMessage());
 
-        return new IdsClient() {
-
-            @Override
-            public BaseResult<Long> getId() {
-
-                return BaseResult.fail(GlobalErrorCodeEnum.ERROR.getCode(),
-                        "获取一个id失败");
-            }
-
-            @Override
-            public BaseResult<List<Long>> batchGetId(Integer count) {
-                return BaseResult.fail(GlobalErrorCodeEnum.ERROR.getCode(),
-                        "批量获取id失败");
-
-            }
-        };
     }
 }

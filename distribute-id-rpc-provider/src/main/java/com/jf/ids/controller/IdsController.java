@@ -2,7 +2,7 @@ package com.jf.ids.controller;
 
 import com.jf.common.utils.aspect.log.MethodLogger;
 import com.jf.common.utils.result.BaseResult;
-import com.jf.distribute.ids.endpoint.IdsApi;
+import com.jf.distribute.ids.api.IdsApi;
 import com.jf.ids.service.IdsService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

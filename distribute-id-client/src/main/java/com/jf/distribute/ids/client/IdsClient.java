@@ -1,7 +1,7 @@
 package com.jf.distribute.ids.client;
 
 import com.jf.distribute.ids.client.hystrix.IdsClientFallback;
-import com.jf.distribute.ids.endpoint.IdsApi;
+import com.jf.distribute.ids.api.IdsApi;
 import org.springframework.cloud.openfeign.FeignClient;
 
 /**
@@ -10,7 +10,7 @@ import org.springframework.cloud.openfeign.FeignClient;
  * @author 江峰
  * @date 2020/7/19 15:02
  */
-@FeignClient(name = "distribute-id-ms", fallbackFactory = IdsClientFallback.class)
+@FeignClient(name = "distribute-id-ms", fallback = IdsClientFallback.class)
 public interface IdsClient extends IdsApi {
 
 }

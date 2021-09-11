@@ -1,4 +1,4 @@
-package com.jf.distribute.ids.endpoint;
+package com.jf.distribute.ids.api;
 
 import com.jf.common.utils.result.BaseResult;
 import org.springframework.web.bind.annotation.GetMapping;

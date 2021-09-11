@@ -1,9 +1,8 @@
 package com.jf.ids.config.snowflake;
 
-import org.springframework.boot.context.properties.ConfigurationProperties;
-
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 
 /**
  * 描述:
@@ -17,13 +16,13 @@ import lombok.Setter;
 @ConfigurationProperties(prefix = "snow.flake")
 public class SnowFlakeProperties {
 
-	/**
-	 * 数据中心标识ID, 默认为1
-	 */
-	private int datacenterId = 1;
+    /**
+     * 数据中心标识ID, 默认为1
+     */
+    private int datacenterId = 1;
 
-	/**
-	 * 机器进程标识ID，默认为1
-	 */
-	private int machineId = 1;
+    /**
+     * 机器进程标识ID，默认为1
+     */
+    private int machineId = 1;
 }

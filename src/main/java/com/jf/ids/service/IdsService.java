@@ -11,18 +11,18 @@ import java.util.List;
  */
 public interface IdsService {
 
-	/**
-	 * 获取一个id
-	 * 
-	 * @return
-	 */
-	long getId();
+    /**
+     * 获取一个id
+     *
+     * @return
+     */
+    long getId();
 
-	/**
-	 * 批量获取count个id
-	 * 
-	 * @param count
-	 * @return
-	 */
-	List<Long> batchGetId(int count);
+    /**
+     * 批量获取count个id
+     *
+     * @param count
+     * @return
+     */
+    List<Long> batchGetId(int count);
 }

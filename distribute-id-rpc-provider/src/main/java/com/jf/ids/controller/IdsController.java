@@ -6,7 +6,6 @@ import com.jf.distribute.ids.api.IdsApi;
 import com.jf.ids.service.IdsService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -29,7 +28,6 @@ public class IdsController implements IdsApi {
     @Autowired
     private IdsService idsService;
 
-    @SneakyThrows
     @ApiOperation("获取一个id")
     @MethodLogger
     public BaseResult<Long> getId() {

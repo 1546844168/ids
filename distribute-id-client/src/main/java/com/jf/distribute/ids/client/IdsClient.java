@@ -1,7 +1,7 @@
 package com.jf.distribute.ids.client;
 
-import com.jf.distribute.ids.client.hystrix.IdsClientFallback;
 import com.jf.distribute.ids.api.IdsApi;
+import com.jf.distribute.ids.fallback.IdsClientFallback;
 import org.springframework.cloud.openfeign.FeignClient;
 
 /**

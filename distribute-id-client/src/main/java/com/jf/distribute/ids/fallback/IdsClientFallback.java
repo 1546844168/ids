@@ -1,4 +1,4 @@
-package com.jf.distribute.ids.client.hystrix;
+package com.jf.distribute.ids.fallback;
 
 import com.jf.common.utils.meta.enums.GlobalErrorCodeEnum;
 import com.jf.common.utils.result.BaseResult;

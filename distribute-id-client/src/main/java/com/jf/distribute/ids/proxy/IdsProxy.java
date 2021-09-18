@@ -47,7 +47,7 @@ public class IdsProxy {
 
         if (!result.getSuccess()) {
             log.error("调用ids服务获取count个id失败, result = [{}]", JSON.toJSON(result));
-            throw new BizException("调用ids服务获取count个id失败");
+            throw new BizException(result.getCode(), result.getMsg());
         }
         return result.getData();
     }

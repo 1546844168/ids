@@ -97,7 +97,6 @@
         <dependency>
             <groupId>com.jf</groupId>
             <artifactId>distribute-id-client</artifactId>
-            <version>${revision}</version>
         </dependency>
 
     </dependencies>

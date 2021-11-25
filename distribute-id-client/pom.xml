@@ -29,7 +29,6 @@
         <dependency>
             <groupId>com.jf</groupId>
             <artifactId>distribute-id-domain</artifactId>
-            <version>${revision}</version>
         </dependency>
 
         <dependency>

@@ -6,8 +6,6 @@ import com.jf.distribute.ids.client.IdsClient;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
-import java.util.List;
-
 /**
  * 调用分布式Id服务，异常熔断处理
  *
@@ -19,13 +17,13 @@ import java.util.List;
 public class IdsClientFallback implements IdsClient {
 
     @Override
-    public BaseResult<Long> getId() {
+    public BaseResult getId() {
         return BaseResult.fail(GlobalErrorCodeEnum.RPC_TIME_OUT.getCode(),
                 GlobalErrorCodeEnum.RPC_TIME_OUT.getMessage());
     }
 
     @Override
-    public BaseResult<List<Long>> batchGetId(Integer count) {
+    public BaseResult batchGetId(Integer count) {
         return BaseResult.fail(GlobalErrorCodeEnum.RPC_TIME_OUT.getCode(),
                 GlobalErrorCodeEnum.RPC_TIME_OUT.getMessage());
 

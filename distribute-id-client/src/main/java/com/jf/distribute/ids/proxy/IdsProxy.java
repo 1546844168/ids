@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.jf.common.utils.exception.BizException;
 import com.jf.common.utils.result.BaseResult;
 import com.jf.distribute.ids.client.IdsClient;
+import com.jf.distribute.ids.request.HelloRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -28,7 +29,7 @@ public class IdsProxy {
      * 获取一个id
      */
     public Long getId() {
-
+        System.out.println(new HelloRequest());
         BaseResult<Long> result = idsClient.getId();
 
         if (!result.getSuccess()) {

@@ -12,15 +12,15 @@ import java.util.List;
  */
 public interface IdsApi {
 
-    /**
-     * 获取一个id
-     */
-    @GetMapping(value = "/id")
-    BaseResult<Long> getId();
+	/**
+	 * 获取一个id
+	 */
+	@GetMapping(value = "/id")
+	BaseResult<Long> getId();
 
-    /**
-     * 获取count个id
-     */
-    @GetMapping(value = "/id/{count}")
-    BaseResult<List<Long>> batchGetId(@PathVariable Integer count);
+	/**
+	 * 获取count个id
+	 */
+	@GetMapping(value = "/id/{count}")
+	BaseResult<List<Long>> batchGetId(@PathVariable Integer count);
 }

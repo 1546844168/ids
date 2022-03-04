@@ -2,6 +2,7 @@ package com.jf.ids.controller;
 
 import com.jf.common.utils.aspect.log.MethodLogger;
 import com.jf.common.utils.result.BaseResult;
+import com.jf.common.utils.utils.id.IdGenerator;
 import com.jf.distribute.ids.api.IdsApi;
 import com.jf.ids.service.IdsService;
 import io.swagger.annotations.Api;
@@ -29,20 +30,28 @@ public class IdsController implements IdsApi {
     private IdsService idsService;
 
     @ApiOperation("获取一个id")
-    @MethodLogger(apiId = "111")
+    @MethodLogger(apiId = "6221deeb0a849a5acc9cb183")
     public BaseResult<Long> getId() {
         log.info("还不错啊");
-        int i = 1 / 0;
         long id = idsService.getId();
         return BaseResult.success(id);
     }
 
     @Override
     @ApiOperation("获取count个id")
-    @MethodLogger(apiId = "222")
+    @MethodLogger(apiId = "6221deeb0a849a5acc9cb184")
     public BaseResult<List<Long>> batchGetId(@PathVariable Integer count) {
 
         List<Long> idList = idsService.batchGetId(count);
         return BaseResult.success(idList);
+    }
+
+    public static void main(String[] args) {
+
+        for (int i = 0; i < 10; i++) {
+
+            String id = IdGenerator.getId();
+            System.out.println(id);
+        }
     }
 }

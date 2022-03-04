@@ -29,15 +29,17 @@ public class IdsController implements IdsApi {
     private IdsService idsService;
 
     @ApiOperation("获取一个id")
-    @MethodLogger
+    @MethodLogger(apiId = "111")
     public BaseResult<Long> getId() {
+        log.info("还不错啊");
+        int i = 1 / 0;
         long id = idsService.getId();
         return BaseResult.success(id);
     }
 
     @Override
     @ApiOperation("获取count个id")
-    @MethodLogger
+    @MethodLogger(apiId = "222")
     public BaseResult<List<Long>> batchGetId(@PathVariable Integer count) {
 
         List<Long> idList = idsService.batchGetId(count);

@@ -4,14 +4,15 @@
 
     <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
     <springProperty scope="context" name="LOG_FILE_NAME" source="spring.application.name"/>
-
+    <property name="LOG_PATTERN"
+              value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] [%-5level] [%X{trace_uuid}] [%c %L] - %msg%n"/>
     <property name="LOG_FILE_PATH" value="/data/logs"/>
 
     <!--每天生成日志的类-->
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <encoder>
             <charset>UTF-8</charset>
-            <pattern>${FILE_LOG_PATTERN}</pattern>
+            <pattern>${LOG_PATTERN}</pattern>
         </encoder>
         <!-- 当天日志保存路径 -->
         <file>${LOG_FILE_PATH}/${LOG_FILE_NAME}/${LOG_FILE_NAME}.log</file>
@@ -29,7 +30,7 @@
     <appender name="ErrorFILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <encoder>
             <charset>UTF-8</charset>
-            <pattern>${FILE_LOG_PATTERN}</pattern>
+            <pattern>${LOG_PATTERN}</pattern>
         </encoder>
         <file>${LOG_FILE_PATH}/${LOG_FILE_NAME}/error/${LOG_FILE_NAME}_error.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">

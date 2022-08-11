@@ -56,7 +56,7 @@
             <!-- distribute-ms-version -->
             <dependency>
                 <groupId>com.jf</groupId>
-                <artifactId>distribute-id-domain</artifactId>
+                <artifactId>distribute-id-common</artifactId>
                 <version>${project.version}</version>
             </dependency>
 
@@ -70,42 +70,6 @@
                 <groupId>com.jf</groupId>
                 <artifactId>distribute-id-client</artifactId>
                 <version>${project.version}</version>
-            </dependency>
-
-            <!-- JSON -->
-            <dependency>
-                <groupId>com.alibaba</groupId>
-                <artifactId>fastjson</artifactId>
-                <version>${fastjson.version}</version>
-            </dependency>
-
-            <!-- lombok -->
-            <dependency>
-                <groupId>org.projectlombok</groupId>
-                <artifactId>lombok</artifactId>
-                <version>${lombok.version}</version>
-            </dependency>
-
-
-            <!-- 引入swagger-ui包  -->
-            <dependency>
-                <groupId>io.springfox</groupId>
-                <artifactId>springfox-swagger-ui</artifactId>
-                <version>${swagger-ui.version}</version>
-            </dependency>
-
-            <!-- 引入swagger包  -->
-            <dependency>
-                <groupId>io.springfox</groupId>
-                <artifactId>springfox-swagger2</artifactId>
-                <version>${swagger-ui.version}</version>
-            </dependency>
-
-            <!-- 引入swagger-bootstrap-ui包 -->
-            <dependency>
-                <groupId>com.github.xiaoymin</groupId>
-                <artifactId>swagger-bootstrap-ui</artifactId>
-                <version>${swagger-bootstrap-ui.version}</version>
             </dependency>
 
         </dependencies>

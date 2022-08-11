@@ -15,12 +15,6 @@
 
     <dependencies>
 
-        <!-- 内部自定义常用工具类 -->
-        <dependency>
-            <groupId>com.jf</groupId>
-            <artifactId>jf-common-utils</artifactId>
-        </dependency>
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
@@ -37,19 +31,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
-        </dependency>
-
-        <!-- JSON -->
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>fastjson</artifactId>
-        </dependency>
-
-        <!-- lombok -->
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <scope>provided</scope>
         </dependency>
 
         <!-- prometheus -->
@@ -91,6 +72,33 @@
         <dependency>
             <groupId>com.jf</groupId>
             <artifactId>distribute-id-client</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.jf</groupId>
+            <artifactId>jf-common-utils</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.jf</groupId>
+            <artifactId>jf-common-aspect</artifactId>
+        </dependency>
+
+        <!-- JSON -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+        </dependency>
+
+        <!-- lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
         </dependency>
 
     </dependencies>

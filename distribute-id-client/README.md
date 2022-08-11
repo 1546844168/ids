@@ -14,8 +14,8 @@
 ```
 <dependency>
     <groupId>com.jf</groupId>
-    <artifactId>jf-common-utils-starter</artifactId>
-    <version>1.0</version>
+    <artifactId>jf-common-utils</artifactId>
+    <version>1.0.0.0-SNAPSHOT</version>
 </dependency>
 ```
 

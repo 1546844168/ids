@@ -9,13 +9,13 @@
     <packaging>pom</packaging>
 
     <parent>
-        <groupId>com.jf.common</groupId>
+        <groupId>com.jf</groupId>
         <artifactId>jf-common-dependencies</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
+        <version>1.0.0.0-SNAPSHOT</version>
     </parent>
 
     <modules>
-        <module>distribute-id-domain</module>
+        <module>distribute-id-common</module>
         <module>distribute-id-rpc-provider</module>
         <module>distribute-id-client</module>
     </modules>
@@ -23,8 +23,8 @@
     <properties>
         <revision>1.0.0.0-SNAPSHOT</revision>
 
-        <!-- 自己的通用组件jar包 -->
-        <jf-common-utils-starter.version>1.0</jf-common-utils-starter.version>
+        <jf-common-utils.version>1.0.0.0-SNAPSHOT</jf-common-utils.version>
+        <jf-common-aspect.version>1.0.0.0-SNAPSHOT</jf-common-aspect.version>
 
     </properties>
 
@@ -39,18 +39,18 @@
                 <scope>import</scope>
             </dependency>
 
-            <!-- nacos -->
-            <dependency>
-                <groupId>com.alibaba.cloud</groupId>
-                <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
-                <version>${nacos.version}</version>
-            </dependency>
-
             <!-- 内部自定义常用工具类 -->
             <dependency>
                 <groupId>com.jf</groupId>
-                <artifactId>jf-common-utils-starter</artifactId>
-                <version>${jf-common-utils-starter.version}</version>
+                <artifactId>jf-common-utils</artifactId>
+                <version>${jf-common-utils.version}</version>
+            </dependency>
+
+            <!-- aop -->
+            <dependency>
+                <groupId>com.jf</groupId>
+                <artifactId>jf-common-aspect</artifactId>
+                <version>${jf-common-aspect.version}</version>
             </dependency>
 
             <!-- distribute-ms-version -->
@@ -72,22 +72,18 @@
                 <version>${project.version}</version>
             </dependency>
 
-
-            <!-- 第三方依赖 -->
-
             <!-- JSON -->
             <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>fastjson</artifactId>
-                <version>1.2.62</version>
+                <version>${fastjson.version}</version>
             </dependency>
 
             <!-- lombok -->
             <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
-                <version>1.18.10</version>
-                <scope>provided</scope>
+                <version>${lombok.version}</version>
             </dependency>
 
 
@@ -95,21 +91,21 @@
             <dependency>
                 <groupId>io.springfox</groupId>
                 <artifactId>springfox-swagger-ui</artifactId>
-                <version>2.9.2</version>
+                <version>${swagger-ui.version}</version>
             </dependency>
 
             <!-- 引入swagger包  -->
             <dependency>
                 <groupId>io.springfox</groupId>
                 <artifactId>springfox-swagger2</artifactId>
-                <version>2.9.2</version>
+                <version>${swagger-ui.version}</version>
             </dependency>
 
             <!-- 引入swagger-bootstrap-ui包 -->
             <dependency>
                 <groupId>com.github.xiaoymin</groupId>
                 <artifactId>swagger-bootstrap-ui</artifactId>
-                <version>1.8.3</version>
+                <version>${swagger-bootstrap-ui.version}</version>
             </dependency>
 
         </dependencies>

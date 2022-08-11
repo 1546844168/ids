@@ -1,8 +1,8 @@
 package com.jf.ids.controller;
 
-import com.jf.common.utils.aspect.log.MethodLogger;
-import com.jf.common.utils.result.BaseResult;
-import com.jf.common.utils.utils.id.IdGenerator;
+import com.jf.common.aspect.log.MethodLogger;
+import com.jf.common.aspect.result.BaseResult;
+import com.jf.common.utils.id.IdGenerator;
 import com.jf.distribute.ids.api.IdsApi;
 import com.jf.ids.service.IdsService;
 import io.swagger.annotations.Api;

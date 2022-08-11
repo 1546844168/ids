@@ -1,8 +1,8 @@
 package com.jf.distribute.ids.proxy;
 
 import com.alibaba.fastjson.JSON;
-import com.jf.common.utils.exception.BizException;
-import com.jf.common.utils.result.BaseResult;
+import com.jf.common.aspect.exception.BizException;
+import com.jf.common.aspect.result.BaseResult;
 import com.jf.distribute.ids.client.IdsClient;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

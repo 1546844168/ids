@@ -18,7 +18,7 @@
         <!-- 内部自定义常用工具类 -->
         <dependency>
             <groupId>com.jf</groupId>
-            <artifactId>jf-common-utils-starter</artifactId>
+            <artifactId>jf-common-utils</artifactId>
         </dependency>
 
         <dependency>
@@ -61,12 +61,6 @@
         <dependency>
             <groupId>io.micrometer</groupId>
             <artifactId>micrometer-registry-prometheus</artifactId>
-        </dependency>
-
-        <!-- nacos -->
-        <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
         </dependency>
 
         <!-- 引入swagger-ui包  -->

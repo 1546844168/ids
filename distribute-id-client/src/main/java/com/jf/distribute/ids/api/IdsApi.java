@@ -1,6 +1,6 @@
 package com.jf.distribute.ids.api;
 
-import com.jf.common.utils.result.BaseResult;
+import com.jf.common.aspect.result.BaseResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 

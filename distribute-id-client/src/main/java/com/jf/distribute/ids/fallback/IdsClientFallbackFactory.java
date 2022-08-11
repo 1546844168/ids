@@ -18,7 +18,6 @@ import org.springframework.stereotype.Component;
 @Slf4j
 public class IdsClientFallbackFactory implements FallbackFactory<IdsApi> {
 
-
     @Override
     public IdsClient create(Throwable throwable) {
         return new IdsClient() {

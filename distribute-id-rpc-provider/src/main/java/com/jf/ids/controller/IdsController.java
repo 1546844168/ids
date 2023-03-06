@@ -1,10 +1,10 @@
 package com.jf.ids.controller;
 
 import com.jf.common.aspect.log.MethodLogger;
-import com.jf.common.aspect.result.BaseResult;
 import com.jf.common.utils.id.IdGenerator;
 import com.jf.distribute.ids.api.IdsApi;
 import com.jf.ids.service.IdsService;
+import com.jf.model.result.CommonResult;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
@@ -31,19 +31,19 @@ public class IdsController implements IdsApi {
 
     @ApiOperation("获取一个id")
     @MethodLogger(apiId = "6221deeb0a849a5acc9cb183")
-    public BaseResult<Long> getId() {
+    public CommonResult<Long> getId() {
         log.info("还不错啊");
         long id = idsService.getId();
-        return BaseResult.success(id);
+        return CommonResult.success(id);
     }
 
     @Override
     @ApiOperation("获取count个id")
     @MethodLogger(apiId = "6221deeb0a849a5acc9cb184")
-    public BaseResult<List<Long>> batchGetId(@PathVariable Integer count) {
+    public CommonResult<List<Long>> batchGetId(@PathVariable Integer count) {
 
         List<Long> idList = idsService.batchGetId(count);
-        return BaseResult.success(idList);
+        return CommonResult.success(idList);
     }
 
     public static void main(String[] args) {

@@ -1,6 +1,6 @@
 package com.jf.distribute.ids.api;
 
-import com.jf.common.aspect.result.BaseResult;
+import com.jf.model.result.CommonResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
@@ -16,11 +16,11 @@ public interface IdsApi {
 	 * 获取一个id
 	 */
 	@GetMapping(value = "/id")
-	BaseResult<Long> getId();
+	CommonResult<Long> getId();
 
 	/**
 	 * 获取count个id
 	 */
 	@GetMapping(value = "/id/{count}")
-	BaseResult<List<Long>> batchGetId(@PathVariable Integer count);
+	CommonResult<List<Long>> batchGetId(@PathVariable Integer count);
 }

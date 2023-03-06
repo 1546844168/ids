@@ -1,9 +1,9 @@
 package com.jf.distribute.ids.fallback;
 
-import com.jf.common.aspect.meta.enums.GlobalErrorCodeEnum;
-import com.jf.common.aspect.result.BaseResult;
 import com.jf.distribute.ids.api.IdsApi;
 import com.jf.distribute.ids.client.IdsClient;
+import com.jf.model.enums.GlobalErrorCodeEnum;
+import com.jf.model.result.CommonResult;
 import feign.hystrix.FallbackFactory;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
@@ -22,14 +22,14 @@ public class IdsClientFallbackFactory implements FallbackFactory<IdsApi> {
     public IdsClient create(Throwable throwable) {
         return new IdsClient() {
             @Override
-            public BaseResult getId() {
-                return BaseResult.fail(GlobalErrorCodeEnum.RPC_TIME_OUT.getCode(),
+            public CommonResult getId() {
+                return CommonResult.fail(GlobalErrorCodeEnum.RPC_TIME_OUT.getCode(),
                         GlobalErrorCodeEnum.RPC_TIME_OUT.getMessage());
             }
 
             @Override
-            public BaseResult batchGetId(Integer count) {
-                return BaseResult.fail(GlobalErrorCodeEnum.RPC_TIME_OUT.getCode(),
+            public CommonResult batchGetId(Integer count) {
+                return CommonResult.fail(GlobalErrorCodeEnum.RPC_TIME_OUT.getCode(),
                         GlobalErrorCodeEnum.RPC_TIME_OUT.getMessage());
 
             }

@@ -4,7 +4,7 @@ import com.jf.common.aspect.log.MethodLogger;
 import com.jf.common.utils.id.IdGenerator;
 import com.jf.distribute.ids.api.IdsApi;
 import com.jf.ids.service.IdsService;
-import com.jf.model.result.CommonResult;
+import com.jf.model.response.CommonResult;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;

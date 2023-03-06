@@ -3,7 +3,7 @@ package com.jf.distribute.ids.fallback;
 import com.jf.distribute.ids.api.IdsApi;
 import com.jf.distribute.ids.client.IdsClient;
 import com.jf.model.enums.GlobalErrorCodeEnum;
-import com.jf.model.result.CommonResult;
+import com.jf.model.response.CommonResult;
 import feign.hystrix.FallbackFactory;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;

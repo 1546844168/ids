@@ -1,8 +1,8 @@
 package com.jf.distribute.ids.proxy;
 
 import com.alibaba.fastjson.JSON;
-import com.jf.common.aspect.exception.BizException;
 import com.jf.distribute.ids.client.IdsClient;
+import com.jf.model.exception.BizException;
 import com.jf.model.response.CommonResult;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,7 +30,7 @@ public class IdsProxy {
 		CommonResult<Long> result = idsClient.getId();
 		if (!result.getSuccess()) {
 			log.error("调用ids服务获取一个id失败, result = [{}]", JSON.toJSON(result));
-			throw new BizException(result.getCode(), result.getMsg());
+			throw new BizException(result.getCode(), result.getMessage());
 		}
 		return result.getData();
 	}
@@ -45,7 +45,7 @@ public class IdsProxy {
 		if (!result.getSuccess()) {
 			log.error("调用ids服务获取count个id失败, result = [{}]",
 					JSON.toJSON(result));
-			throw new BizException(result.getCode(), result.getMsg());
+			throw new BizException(result.getCode(), result.getMessage());
 		}
 		return result.getData();
 	}

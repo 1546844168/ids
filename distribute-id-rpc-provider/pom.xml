@@ -33,6 +33,13 @@
             <scope>test</scope>
         </dependency>
 
+        <!-- nacos -->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+        </dependency>
+
+
         <!-- prometheus -->
         <dependency>
             <groupId>org.springframework.boot</groupId>

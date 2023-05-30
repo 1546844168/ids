@@ -19,7 +19,7 @@ import org.springframework.context.annotation.ComponentScan;
 @ComponentScan(basePackages = "com.jf")
 public class DistributeIdApplication {
 
-    private static Logger logger = LoggerFactory.getLogger(DistributeIdApplication.class);
+    private static final Logger logger = LoggerFactory.getLogger(DistributeIdApplication.class);
 
     public static void main(String[] args) {
         try {

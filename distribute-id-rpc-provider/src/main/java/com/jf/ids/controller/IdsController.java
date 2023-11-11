@@ -50,7 +50,7 @@ public class IdsController implements IdsApi {
 
         for (int i = 0; i < 10; i++) {
 
-            String id = IdGenerator.getId();
+            String id = IdGenerator.generateId();
             System.out.println(id);
         }
     }

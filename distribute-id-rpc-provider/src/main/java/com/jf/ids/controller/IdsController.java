@@ -1,6 +1,6 @@
 package com.jf.ids.controller;
 
-import com.jf.common.aspect.log.MethodLogger;
+import com.jf.common.aspect.log.RpcApi;
 import com.jf.common.utils.id.IdGenerator;
 import com.jf.distribute.ids.api.IdsApi;
 import com.jf.ids.service.IdsService;
@@ -30,7 +30,7 @@ public class IdsController implements IdsApi {
     private IdsService idsService;
 
     @ApiOperation("获取一个id")
-    @MethodLogger(apiId = "6221deeb0a849a5acc9cb183")
+    @RpcApi(apiId = "6221deeb0a849a5acc9cb183")
     public CommonResult<Long> getId() {
         log.info("还不错啊");
         long id = idsService.getId();
@@ -39,7 +39,7 @@ public class IdsController implements IdsApi {
 
     @Override
     @ApiOperation("获取count个id")
-    @MethodLogger(apiId = "6221deeb0a849a5acc9cb184")
+    @RpcApi(apiId = "6221deeb0a849a5acc9cb184")
     public CommonResult<List<Long>> batchGetId(@PathVariable Integer count) {
 
         List<Long> idList = idsService.batchGetId(count);
